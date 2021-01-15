@@ -4,7 +4,7 @@ export default class Person {
         this.lastName = lastName;
         this.birthDate = birthDate;
         this.sex = sex;
-        this.cardNumber = cardNumber;
+        this._id = _id;
         this.hadCovid = hadCovid;
         this.recievedFirstDose = recievedFirstDose;
         this.recievedSecondDose = recievedSecondDose;
