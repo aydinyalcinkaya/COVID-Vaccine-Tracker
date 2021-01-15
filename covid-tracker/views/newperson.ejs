@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%include sections/head %>
+</head>
+
+<body>
+  <%include sections/navbar %>
+  <h1><%= title %></h1>
+  <form id="formAddPerson" name="addperson" method="post" action="/addperson">
+    <input required id="inputFirstName" type="text" placeholder="First Name" name="firstName" /> <br />
+    <input required id="inputLastName" type="text" placeholder="Last Name" name="lastName" /> <br />
+    <input required id="inputBirthDate" type="date" name="birthDate" /> <br />
+    <select required id="inputSex" name="sex" form="formAddPerson">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select> <br />
+    <input id="inputHadCovid" name="hadCovid" type="checkbox" /> <br />
+    <input required id="inputCardNumber" type="number" name="cardNumber" pattern=".{10,10}"
+      onKeyPress="if(this.value.length==10) return false;" minlength="10" maxlength="10" /> <br />
+    <input required id="inputFirstDoseDate" type="datetime-local" name="firstDoseDate" /> <br />
+    <input required id="inputSecondDoseDate" type="datetime-local" name="secondDoseDate" /> <br />
+
+    <button id="btnSubmit" type="submit">Submit</button>
+  </form>
+</body>
+
+</html>
