@@ -17,14 +17,15 @@ router.get('/addperson', function(req, res) {
   res.render('addperson', { title: 'Add New Person' });
 });
 
-/* GET Userlist page. */
-router.get('/userlist', function(req, res) {
+/* GET PERSONLIST page. */
+router.get('/personlist', function(req, res) {
   var db = req.db;
   var collection = db.get('usercollection');
 
   collection.find({},{sort : {priority : -1, birthDate : 1}},function(e,docs){
-      res.render('userlist', {
-          "userlist" : docs
+      res.render('personlist', {
+          "personlist" : docs,
+          title: "Person List"
       });
   });
 });
@@ -38,31 +39,28 @@ router.post('/addperson', function(req, res) {
   var firstName = bd.firstName;
   var lastName = bd.lastName;
   var sex = bd.sex;
-  var healthCardNumber = Number(bd.cardNumber);
-  var hadCovid;
-
-  if (bd.hadCovid == null) {
-    hadCovid = false;
-  } else {
-    hadCovid = true;
-  }
-
-  var priority;
-
-  if (bd.priority == "noPriority") {
-    priority = 0;
-  } else if (bd.priority == "essential") {
-    priority = 1;
-  } else if (bd.priority == "healthCare") {
-    priority = 2;
-  }
-
+  var healthCardNumber = Number(bd.healthCardNumber);
   var email = bd.email;
   var phoneNumber = bd.phoneNumber;
 
   var dateInMilleseconds = new Date(bd.birthDate)
+  var today = new Date();
+
+
+  var priority;
+
+  if (bd.priority == "noPriority" && (today.getFullYear() - dateInMilleseconds.getFullYear() >= 70)) {
+    priority = 2;
+  } else if (bd.priority == "essentialWorker") {
+    priority = 1;
+  } else if (bd.priority == "healthCareWorker") {
+    priority = 3;
+  } else {
+    priority = 0;
+  }
+
     // Get our form values. These rely on the "name" attributes
-  var person = new Person(firstName, lastName, dateInMilleseconds.getTime(), sex, healthCardNumber, hadCovid, bd.firstDoseDate, bd.secondDoseDate, email, phoneNumber, priority);
+  var person = new Person(firstName, lastName, dateInMilleseconds.getTime(), sex, healthCardNumber, bd.firstDoseDate, bd.secondDoseDate, email, phoneNumber, priority);
   
   // Set our collection
   var collection = db.get('usercollection');
@@ -76,7 +74,7 @@ router.post('/addperson', function(req, res) {
       }
       else {
           // And forward to success page
-          res.redirect("userlist");
+          res.redirect("personlist");
       }
   });
 
