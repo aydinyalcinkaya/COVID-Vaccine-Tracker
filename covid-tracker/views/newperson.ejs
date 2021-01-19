@@ -21,8 +21,14 @@
       onKeyPress="if(this.value.length==10) return false;" minlength="10" maxlength="10" /> <br />
     <input required id="inputFirstDoseDate" type="datetime-local" name="firstDoseDate" /> <br />
     <input required id="inputSecondDoseDate" type="datetime-local" name="secondDoseDate" /> <br />
-    <input required type="tel" id="inputPhoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/> <br />
-    <input required id="inputEmail" type="email" name="email"/> 
+    <input required type="tel" id="inputPhoneNumber" name="phoneNumber"/> <br />
+    <input required id="inputEmail" type="email" name="email"/><br />
+    <select required id="inputPriority" name="priority" form="formAddPerson">
+      <option value="noPriority">No Priority</option>
+      <option value="healthCare">Health Care Worker</option>
+      <option value="essential">Essential Worker</option>
+    </select> <br />
+    
 
     <button id="btnSubmit" type="submit">Submit</button>
   </form>
