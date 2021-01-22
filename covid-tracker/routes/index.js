@@ -131,21 +131,26 @@ router.post('/setdates', async function (req, res) {
   
   people = Object.values(people);
   //delete people[0]["_id"];
-
+  var date = new Date().getTime();
+  var today = new Date(date);
+  
 
   for(var i = 0; i < people.length; i++) {
+
+    var today = new Date(date);
+
     collection.remove({_id: people[i]._id});
+    delete people[i]["_id"];
+    people[i].firstDoseDate = today.toDateString();
+    date+=86400000;
   }
 
-  for(var i = 0; i < people.length; i++) {
-    delete people[0]["_id"];
-  }
   console.log(people);
   people = Object.assign(people);
   collection.insert(people, function (err, doc) {
     if (err) {
       // If it failed, return error
-      res.send("There was a problem adding the information to the database.\n" + err);
+      res.send(verr);
       
     } else {
       // And forward to success page

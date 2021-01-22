@@ -9,7 +9,7 @@
     <ul>
       <table class="table table-striped">
         <tr>
-           <th>First Name</th><th>Last Name</th><th>Priority</th>
+           <th>First Name</th><th>Last Name</th><th>Priority</th><th>First Dose</th>
         </tr>
      
         <% for (var i = 0; i < personlist.length; i++) { %>
@@ -17,6 +17,7 @@
            <td><%= personlist[i].firstName %></td>
            <td><%= personlist[i].lastName %></td>
            <td><%= personlist[i].priority %></td>
+           <td><%= personlist[i].firstDoseDate %></td>
          </tr>    
         <% } %>
      </table>
