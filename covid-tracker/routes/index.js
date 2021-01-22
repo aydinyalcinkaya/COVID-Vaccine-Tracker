@@ -128,21 +128,30 @@ router.post('/setdates', async function (req, res) {
       birthDate: 1
     }
   });
-
   
   people = Object.values(people);
-  people[0].firstName = 'Sermet';
-  delete people[0]["_id"];
-  console.log(people[0]);
-  collection.insert(people[0], function (err, doc) {
+  //delete people[0]["_id"];
+
+
+  for(var i = 0; i < people.length; i++) {
+    collection.remove({_id: people[i]._id});
+  }
+
+  for(var i = 0; i < people.length; i++) {
+    delete people[0]["_id"];
+  }
+  console.log(people);
+  people = Object.assign(people);
+  collection.insert(people, function (err, doc) {
     if (err) {
       // If it failed, return error
-      res.send("There was a problem adding the information to the database.");
+      res.send("There was a problem adding the information to the database.\n" + err);
+      
     } else {
       // And forward to success page
       res.redirect("personlist");
     }
-  });
+  }, {castIds: false});
 });
 
 module.exports = router;
