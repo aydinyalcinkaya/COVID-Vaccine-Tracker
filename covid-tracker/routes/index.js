@@ -20,13 +20,6 @@ router.get('/newperson', function (req, res) {
 router.get('/personlist', async function (req, res) {
   var db = req.db;
   var collection = db.get('usercollection');
-  collection.findOneAndUpdate({
-    firstName: "Emilio"
-  }, {
-    $set: {
-      firstName: "Emilio" + 'cheese'
-    }
-  });
 
   var people = await collection.find({}, {
     sort: {
@@ -36,9 +29,6 @@ router.get('/personlist', async function (req, res) {
   });
 
   people = Object.values(people);
-  people[0].firstName = 'Sermet';
-  console.log(people[0].firstName);
-
 
   collection.find({}, {
     sort: {
@@ -132,8 +122,6 @@ router.post('/setdates', async function (req, res) {
   people = Object.values(people);
   //delete people[0]["_id"];
   var date = new Date().getTime();
-  var today = new Date(date);
-  
 
   for(var i = 0; i < people.length; i++) {
 
@@ -144,6 +132,7 @@ router.post('/setdates', async function (req, res) {
     people[i].firstDoseDate = today.toDateString();
     date+=86400000;
   }
+
 
   console.log(people);
   people = Object.assign(people);
