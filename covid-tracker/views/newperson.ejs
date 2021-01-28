@@ -13,107 +13,108 @@
 </head>
 
 <body>
-  <%include sections/navbar %>
-  <h1 class="center"><%= title %></h1>
-  <form id="formAddPerson" name="addperson" method="post" action="/addperson" class="form-horizontal center">
-    <fieldset>
+  <div class="main">
+    <%include sections/navbar %>
+    <h1 class="center"><%= title %></h1>
+    <form id="formAddPerson" name="addperson" method="post" action="/addperson" class="form-horizontal center">
+      <fieldset>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col control-label" for="inputFirstName">First Name</label>
-        <div class="col">
-          <input id="inputFirstName" name="firstName" type="text" placeholder="" class="form-control input-md"
-            required">
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="inputFirstName">First Name</label>
+          <div class="col">
+            <input id="inputFirstName" name="firstName" type="text" placeholder="" class="form-control input-md"
+              required">
 
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col control-label" for="inputLastName">Last Name</label>
-        <div class="col">
-          <input id="inputLastName" name="lastName" type="text" placeholder="" class="form-control input-md" required>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="inputLastName">Last Name</label>
+          <div class="col">
+            <input id="inputLastName" name="lastName" type="text" placeholder="" class="form-control input-md" required>
 
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col control-label" for="inputSex">Select Sex</label>
-        <div class="col">
-          <select id="inputSex" name="sex" class="form-control">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col control-label" for="inputSex">Select Sex</label>
+          <div class="col">
+            <select id="inputSex" name="sex" class="form-control">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col control-label" for="inputSex">Health Card Number</label>
-        <div class="col">
-          <input id="inputHealthCard" name="healthCardNumber" type="number" maxlength="10" minlength="10" placeholder=""
-            class="form-control input-md" required>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="inputSex">Health Card Number</label>
+          <div class="col">
+            <input id="inputHealthCard" name="healthCardNumber" type="number" maxlength="10" minlength="10"
+              placeholder="" class="form-control input-md" required>
 
+          </div>
         </div>
-      </div>
-      
-      <!-- Date input -->
-      <div class="form-group">
-        <div class="col">
-          <label class="control-label" for="inputBirthDate">Birth Date</label>
-          <input class="form-control" id="inputBirthDate" name="birthDate" placeholder="MM/DD/YYY" type="date" />
+
+        <!-- Date input -->
+        <div class="form-group">
+          <div class="col">
+            <label class="control-label" for="inputBirthDate">Birth Date</label>
+            <input class="form-control" id="inputBirthDate" name="birthDate" placeholder="MM/DD/YYY" type="date" />
+          </div>
         </div>
-      </div>
 
-      <!-- Select Basic -->
-      <div class="form-group">
-        <label class="col control-label" for="inputPriority">Select Sex</label>
-        <div class="col">
-          <select id="inputPriority" name="priority" class="form-control">
-            <option value="noPriority">No Priority</option>
-            <option value="essentialWorker">Essential Worker</option>
-            <option value="healthCareWorker">Health Care Worker</option>
-          </select>
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col control-label" for="inputPriority">Select Sex</label>
+          <div class="col">
+            <select id="inputPriority" name="priority" class="form-control">
+              <option value="noPriority">No Priority</option>
+              <option value="essentialWorker">Essential Worker</option>
+              <option value="healthCareWorker">Health Care Worker</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col control-label" for="inputEmail">Email</label>
-        <div class="col">
-          <input id="inputEmail" name="email" type="email" placeholder="" class="form-control input-md" >
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="inputEmail">Email</label>
+          <div class="col">
+            <input id="inputEmail" name="email" type="email" placeholder="" class="form-control input-md">
 
+          </div>
         </div>
-      </div>
 
-      <!-- Text input-->
-      <div class="form-group">
-        <label class="col control-label" for="inputPhoneNumber">Phone Number</label>
-        <div class="col">
-          <input id="inputPhone" name="phoneNumber" type="tel" placeholder="" class="form-control input-md" required>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="inputPhoneNumber">Phone Number</label>
+          <div class="col">
+            <input id="inputPhone" name="phoneNumber" type="tel" placeholder="" class="form-control input-md" required>
 
+          </div>
         </div>
-      </div>
 
-      <!-- Button -->
-      <div class="form-group">
-        <div class="col">
-          <button id="btnSubmit" type="submit" name="singlebutton" class="btn btn-primary">Submit</button>
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col">
+            <button id="btnSubmit" type="submit" name="singlebutton" class="btn btn-primary">Submit</button>
+          </div>
         </div>
-      </div>
 
-    </fieldset>
-
+      </fieldset>
 
 
 
-  </form>
 
-  <form class="form-horizontal">
+    </form>
 
-  </form>
+    <form class="form-horizontal">
 
+    </form>
+  </div>
 </body>
 
 </html>

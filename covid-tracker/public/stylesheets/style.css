@@ -1,14 +1,15 @@
 body {
   padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h2 {
   margin:0 0 .5em 0;
 }
 
-a {
-  color: #00B7FF;
+.navbar a {
+  color: #0069d9;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #wrapper {
@@ -36,7 +37,6 @@ fieldset {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-  font-size: 12px;
   letter-spacing: 5px;
 }
 
@@ -44,4 +44,28 @@ fieldset {
   margin: auto;
   width: 75%;
   padding: 10px;
+}
+
+img {
+  width: 65%;
+  height: 65%;
+}
+
+.main {
+  padding-left: 20px;
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.alert {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+
+.btn-group .btn {
+  margin: 15px;
 }

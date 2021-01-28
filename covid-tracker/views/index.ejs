@@ -6,21 +6,30 @@
 </head>
 
 <body>
-  <% include sections/navbar %> 
-  <h1><%= title %></h1>
-  <p>Welcome to COVID-19 Vaccination Tracker. This is a project designed and programmed by Aydin Yalcinkaya for his ICS4U1-01 course. </p>
-  <p>I was inspired to design this system after <a href="https://www.ctvnews.ca/politics/ottawa-gives-accounting-firm-deloitte-16m-contract-to-track-covid-19-vaccinations-1.5262030">Ottawa gave the accounting firm, Deloitte, $16 million to design a similar system.</a> </p>
-  <p>Obviously, this was not developed to the scale that a $16 million project would be, but that was never the intention. </p>
-  <p>If this were to be deployed, it would function as planned, which was the goal of this project. It is able to read from the database, load in the users, and assign them dates for the first and second dose of the vaccine. </p>
-  <p>Originally, the goals for this project were very high, and due to a shorter timeframe, and other class assignments to work on, some of those goals were not able to be met. However, I ended up learning a whole new language and framework, and I hope to continue this project after the year is over.</p>
-  <form method="post" action="/setdates">
-    
-    <button id="btn" type="submit" name="singlebutton" class="btn btn-primary">Set Vaccination Dates</button>
-  </form>
-  <br />
-  <form method="post" action="/update">
-    <button id="btn" type="submit" name="singlebutton" class="btn btn-primary">Refresh the Database</button>
-  </form>
+  <div class="main">
+    <% include sections/navbar %>
+    <h1><%= title %></h1>
+    <p>Welcome to COVID-19 Vaccination Tracker. This is a project designed and programmed by Aydin Yalcinkaya for his
+      ICS4U1-01 course. </p>
+    <p>I was inspired to design this system after <a
+        href="https://www.ctvnews.ca/politics/ottawa-gives-accounting-firm-deloitte-16m-contract-to-track-covid-19-vaccinations-1.5262030">Ottawa
+        gave the accounting firm, Deloitte, $16 million to design a similar system.</a> </p>
+    <p>Obviously, this was not developed to the scale that a $16 million project would be, but that was never the
+      intention. </p>
+    <p>If this were to be deployed, it would function as planned, which was the goal of this project. It is able to read
+      from the database, load in the users, and assign them dates for the first and second dose of the vaccine. </p>
+    <p>Originally, the goals for this project were very high, and due to a shorter timeframe, and other class
+      assignments to work on, some of those goals were not able to be met. However, I ended up learning a whole new
+      language and framework, and I hope to continue this project after the year is over.</p>
+    <div class="btn-group" role="group">
+      <form method="post" action="/setdates">
+        <button id="btn" type="submit" name="singlebutton" class="btn btn-primary">Set Vaccination Dates</button>
+      </form>
+      <form method="post" action="/update">
+        <button id="btn" type="submit" name="singlebutton" class="btn btn-primary">Refresh the Database</button>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>

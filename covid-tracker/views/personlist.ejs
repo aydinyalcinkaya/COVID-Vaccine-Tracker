@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%include sections/head %>
-  </head>
-  <body>
+
+<head>
+  <%include sections/head %>
+</head>
+
+<body>
+  <div class="main">
     <%include sections/navbar %>
     <h1><%= title %></h1>
     <ul>
       <table class="table table-striped">
         <tr>
-           <th>First Name</th><th>Last Name</th><th>Priority</th><th>First Dose</th><th>Second Dose</th><th>Are Vaccinated</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Priority</th>
+          <th>First Dose</th>
+          <th>Second Dose</th>
+          <th>Are Vaccinated</th>
         </tr>
-     
+
         <% for (var i = 0; i < personlist.length; i++) { %>
-         <tr>
-           <td><%= personlist[i].firstName %></td>
-           <td><%= personlist[i].lastName %></td>
-           <td><%= personlist[i].priority %></td>
-           <td><%= personlist[i].firstDoseDate %></td>
-           <td><%= personlist[i].secondDoseDate %></td>
-           <td><%= personlist[i].isVaccinated %></td>
-         </tr>    
+        <tr>
+          <td><%= personlist[i].firstName %></td>
+          <td><%= personlist[i].lastName %></td>
+          <td><%= personlist[i].priority %></td>
+          <td><%= personlist[i].firstDoseDate %></td>
+          <td><%= personlist[i].secondDoseDate %></td>
+          <td><%= personlist[i].isVaccinated %></td>
+        </tr>
         <% } %>
-     </table>
+      </table>
     </ul>
-  </body>
+  </div>
+</body>
+
 </html>

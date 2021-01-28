@@ -90,8 +90,6 @@ router.post('/addperson', function (req, res) {
 
   var collection = db.get('usercollection');
 
-
-
   console.log(JSON.stringify(person));
 
   collection.insert(person, function (err, doc) {
@@ -156,10 +154,9 @@ router.post('/setdates', async function (req, res) {
     dateInMilleseconds += DAY;
   }
 
-
-
   console.log(people);
   people = Object.assign(people);
+
   collection.insert(people, function (err, doc) {
     if (err) {
       // If it failed, return error
@@ -215,6 +212,10 @@ router.post('/update', async function (req, res) {
 
       people[i].isVaccinated = true;
 
+    } else {
+      
+      people[i].isVaccinated = false;
+
     }
   }
 
@@ -233,4 +234,5 @@ router.post('/update', async function (req, res) {
     castIds: false
   });
 });
+
 module.exports = router;
