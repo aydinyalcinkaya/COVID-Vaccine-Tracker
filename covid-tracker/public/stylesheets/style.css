@@ -1,36 +1,38 @@
 body {
-  padding: 30px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 h2 {
-  margin:0 0 .5em 0;
+  margin: 0 0 .5em 0;
 }
 
 .navbar a {
-  color: #0069d9;
+  color: #ffffff;
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #wrapper {
-  padding-left:312px;
-  position:relative;
+  padding-left: 312px;
+  position: relative;
 }
 
 
 fieldset {
-  border:0;
-  padding:0; margin:0;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.bg-3 { 
+.bg-3 {
   background-color: #ffffff;
   color: #555555;
 }
+
 .container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -38,6 +40,7 @@ fieldset {
   border-radius: 0;
   margin-bottom: 0;
   letter-spacing: 5px;
+  background-color: #1a1a1a;
 }
 
 .center {
@@ -55,10 +58,16 @@ img {
   padding-left: 20px;
   padding-right: 20px;
   vertical-align: middle;
+  padding: 5%;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
 }
 
 .alert {
   text-align: center;
+  margin-bottom: 0 !important; 
+  background-color: #ffd440;
+  border: #ffd440;
 }
 
 h1 {
@@ -68,4 +77,14 @@ h1 {
 
 .btn-group .btn {
   margin: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

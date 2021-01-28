@@ -13,8 +13,9 @@
 </head>
 
 <body>
+  <%include sections/navbar %>
   <div class="main">
-    <%include sections/navbar %>
+    
     <h1 class="center"><%= title %></h1>
     <form id="formAddPerson" name="addperson" method="post" action="/addperson" class="form-horizontal center">
       <fieldset>
@@ -115,6 +116,7 @@
 
     </form>
   </div>
+  <% include sections/footer %>
 </body>
 
 </html>
