@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
  */
 router.get('/newperson', function (req, res) {
   res.render('newperson', {
-    title: 'Add New User'
+    title: 'Add New Person'
   });
 });
 
